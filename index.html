@@ -108,7 +108,7 @@
 													<code>import React from "react";</code><br>
 													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&lth1&gtHello React!&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
@@ -153,7 +153,7 @@
 															<code>console.log("Hello React!")</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
@@ -170,7 +170,7 @@
 													<code>import Hello from ".\printHello";</code><br>
 													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&ltHello /&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
@@ -187,7 +187,7 @@
 													<code>import Hello from ".\printHello";</code><br>
 													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&ltHello <span style="color:#44ff75;">name="Artur"</span>/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
@@ -202,7 +202,7 @@
 															<code>console.log("Hello <span style="color:#44ff75;">{props.name}</span>!")</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
@@ -219,21 +219,23 @@
 													- useState returns a varaible storing local state and a function to update that variable,<br>
 													- during first rendering, a value of <span style="color:#ff4444;">state</span> variable is as the same as an initially passed value of <span style="color:#ff4444;">initialState</span> variable,<br>
 													- function <span style="color:#00b8ff;">setState</span> is used for updating the local state id est the value of <span style="color:#ff4444;">state</span> variable,<br>
-													- during next render processes, the first value in useState is alwyas the most recent state set by <span style="color:#00b8ff;">setState</span> function.
-													- when gettin data from an external API we can save it in a state,<br>
-													- the code:<br>
+													- during next render processes, the first value in useState is alwyas the most recent state set by <span style="color:#00b8ff;">setState</span> function.<br>
+													- the example code:<br>
 													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>const[count, setCount] = useState(0)</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>const increment = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>setCount(count + 1);</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&ltbutton onClick="{increment}"&gtAdd&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&lthi&gt{count}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
 													<code>}</code><br>
-													<code>export default App;</code>
+													<code>export default App;</code><br>
+													- when getting data from an external API we can save it in a state,<br>
+
 												</li>
 											</ul>
 
