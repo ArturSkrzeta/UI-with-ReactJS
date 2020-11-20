@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Portfolio Artur Skrzeta</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><a href="https://arturskrzeta.github.io/"><img src="images/avatar.png" alt="" style="margin-bottom:0px;"/></a></span>
+					<h1 id="logo"><a href="https://arturskrzeta.github.io/">Artur Skrzeta</a></h1>
+					<p>Data Analyst<br />
+					+4 years experience</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#one" class="active">Intro</a></li>
+						<li><a href="#two">Features</a></li>
+						<li><a href="#three">Demo</a></li>
+						<li><a href="#four">Setup</a></li>
+						<li><a href="#five">Source Code</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/artur-skrz%C4%99ta-010b23187/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.instagram.com/arturskrrr/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://github.com/ArturSkrzeta" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto: arturskrzeta@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="container">
+									<header class="major">
+										<h2>UI for ReactJS</h2>
+										<h3>Intro</h3>
+
+											<p>ReactJS - is an open-source JavaScript web framework for building user interface - front-end of web applications.</p>
+
+											<h5>Document Object Model:</h5>
+											<ul>
+												<li>React receives data coming from database or external API and renders it into <b>Document Object Model (DOM)</b>.</li>
+												<li>DOM is cross-platform and language-independent interface for XML or HTML documents.
+													<br>
+													- in other words, DOM is an object oriented representation of XML/HTML document,<br>
+													- DOM structures XML/HTML into logical tree consisted of nodes where each node constitutes an object representing a part of document,<br>
+													- e.g. <b>&lttittle&gt</b> is a single node of parent node <b>&lthead&gt</b> in HTML document,<br><br>
+													<img src="images/DOM.png" width="380"><br>
+													- DOM has methods that allow accessing three's elements programmatically,<br>
+													- those methods enable us to interfere document structure, changing style or content of an element,<br>
+													- nodes also have event handlers that can react on user's behaviour changing it's structure/style/content.<br>
+												</li>
+											</ul>
+
+											<h5>JavaScript with DOM:</h5>
+											<ul>
+												<li>When web-page loading, the browser creates DOM of that page.</li>
+												<li>DOM becomes the representation of web-page's HTML document and acts as an interface between JavaScript and web-page's HTML document itself.</li>
+												<li>That solution allows making dynamic actions on web-page with JavaScript code:
+													<br>
+													- adding/removing HTML elements or their attributes,<br>
+													- changing CSS styles,<br>
+													- reacting to events and creating new ones.<br>
+												</li>
+											</ul>
+
+											<h5>ReactJS with DOM:</h5>
+											<ul>
+												<li>ReactJS uses JavaScript XML (JSX) which allows us to write HTML elements into React's code and place them into DOM without any additional methods like createElement().</li>
+												<li>ReactJS provides a selective rendering which results with a performance boost:
+													<br>
+													- it keeps in-memory cache where each change is being computed,<br>
+													- it renders only single DOM component that actually chagne instead of rendering entire page each time change is made,<br>
+													- rendering selectively mens e.g. saving a lot work for recalculating CSS style and rerendering entire web page.
+												</li>
+											</ul>
+
+											<h5>ReactJS structure:</h5>
+											<ul>
+												<li>We can say that ReactJS is built with units called components:
+													<br>
+													- components are rerendered to a particular DOM element using React DOM library,<br>
+													- during component render we can pass parameters when calling it,<br>
+													- we can declare component as a function or a class.
+												</li>
+												<li>Multiple elements on the same level needs to be wrapped in a container as <b>&ltdiv&gt</b><b>&lt/div&gt</b> or shortly <b>&lt&gt</b><b>&lt/&gt</b> or needs to be returned as an array.
+													<br>
+													<code>&lt&gt</code><br>&nbsp&nbsp
+													<code>&ltHeader /&gt</code><br>&nbsp&nbsp
+													<code>&ltContent /&gt</code><br>&nbsp&nbsp
+													<code>&ltFooter /&gt</code><br>
+													<code>&lt/&gt</code>
+												</li>
+
+											</ul>
+
+									</header>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<h3>Features</h3>
+									<p>App includes following features:</p>
+									<ul class="feature-icons">
+										<li class="icon solid fa-check">JS</li>
+										<li class="icon solid fa-check">JSX</li>
+										<li class="icon solid fa-check">DOM</li>
+										<li class="icon solid fa-check">ReactJS</li>
+									</ul>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three">
+								<div class="container">
+									<h3>Demo</h3>
+
+									<p>Tis section presents app's demo:</p>
+
+								</div>
+							</section>
+
+
+						<!-- Four -->
+							<section id="four">
+								<div class="container">
+									<h3>Setup</h3>
+									<ol>
+									  <li>Nodejs installation:
+									   <br>&nbsp&nbsp&nbsp
+									   <code>https://nodejs.org/en/</code>
+										 <br>&nbsp&nbsp&nbsp&nbsp&nbsp
+										 once installed, we get access to node package manager (npm)
+									  </li>
+									  <li>Npx installation:
+									   <br>&nbsp&nbsp&nbsp
+									   <code>npm install -g npx</code>
+										 <br>&nbsp&nbsp&nbsp
+										 <code>npx --version</code>
+									  </li>
+									  <li>Creating project in project directory:
+									   <br>&nbsp&nbsp&nbsp
+									   <code>npx create-react-app project-name</code>
+										 <br>&nbsp&nbsp&nbsp
+										 <code>cd project-name</code>
+									  </li>
+									  <li>Running project:
+									   <br>&nbsp&nbsp&nbsp
+									   <code>npm start</code>
+									  </li>
+									</ol>
+								</div>
+							</section>
+
+							<section id="five">
+								<div class="container">
+									<h3>Source Code</h3>
+									<p>You can view the source code: <a href="#">HERE</a></p>
+									<p>&nbsp</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<a href="https://arturskrzeta.github.io/" style="padding-bottom:10px;">Back to Portfolio</a>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
