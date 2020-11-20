@@ -147,11 +147,11 @@
 											<ul>
 												<li>We can program what happens when for example button clicked:
 													<br>
-													<code>import React from "react";</code><br><br>
+													<code>import React from "react";</code><br>
 													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>const printHello = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>console.log("Hello React!")</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>};</code><br><br>&nbsp&nbsp&nbsp&nbsp
+														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -167,7 +167,7 @@
 												<li>We export printHello function to a separate componenet and import it into mainApp function:
 													<br>
 													<code>import React from "react";</code><br>
-													<code>import Hello from ".\printHello";</code><br><br>
+													<code>import Hello from ".\printHello";</code><br>
 													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -176,6 +176,39 @@
 														<code>);</code><br>
 													<code>}</code><br>
 													<code>export default App;</code><br>
+												</li>
+											</ul>
+
+											<h5>Passing parameters into components:</h5>
+											<ul>
+												<li>App.js:
+													<br>
+													<code>import React from "react";</code><br>
+													<code>import Hello from ".\printHello";</code><br>
+													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&ltHello <span style="color:#44ff75;">name="Artur"</span>/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>);</code><br>
+													<code>}</code><br>
+													<code>export default App;</code><br>
+												</li><br>
+												<li>printHello.js:
+													<br>
+													<code>import React from "react";</code><br>
+													<code>function Hello(<span style="color:#44ff75;">props</span>) {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>const printHello = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>console.log("Hello <span style="color:#44ff75;">{props.name}</span>!")</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>);</code><br>
+													<code>}</code><br>
+
+
 												</li>
 											</ul>
 
