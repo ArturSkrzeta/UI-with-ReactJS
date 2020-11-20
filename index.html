@@ -158,7 +158,13 @@
 													<code>})}</code>
 												<li>Arrow function in one line:
 													<br>
-													<code>{pets.map(user => &ltUser name={user.name} species={user.species} /&gt )} </code>
+													<code>{users.map(user => &ltUser name={user.name} species={user.species} /&gt )} </code>
+												</li>
+												<li>Arrow function with no 'return' keyword:
+													<br>
+													<code>{users.map(user => (</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>&ltUser name={user.name} species={user.species} /&gt</code><br>
+													<code>)} </code>
 												</li>
 											</ul>
 
