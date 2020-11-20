@@ -143,6 +143,25 @@
 												</li>
 											</ul>
 
+											<h5>Anonymous function and arrow function:</h5>
+											<ul>
+												<li>Anonymous function:
+													<br>
+													<code>{users.map(function(user) {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>return &ltUser name={user.name} surname={user.surname} /&gt</code><br>
+													<code>})}</code>
+												</li>
+												<li>Arrow function:
+													<br>
+													<code>{users.map(user => {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>return &ltUser name={user.name} surname={user.surname} /&gt</code><br>
+													<code>})}</code>
+												<li>Arrow function in one line:
+													<br>
+													<code>{pets.map(user => &ltUser name={user.name} species={user.species} /&gt )} </code>
+												</li>
+											</ul>
+
 											<h5>Events:</h5>
 											<ul>
 												<li>We can program what happens when for example button clicked:
@@ -192,8 +211,8 @@
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
 													<code>}</code><br>
-													<code>export default App;</code><br>
-												</li><br>
+													<code>export default App;</code>
+												</li>
 												<li>printHello.js:
 													<br>
 													<code>import React from "react";</code><br>
