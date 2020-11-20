@@ -206,12 +206,21 @@
 																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
-													<code>}</code><br>
-
-
+													<code>}</code>
 												</li>
 											</ul>
 
+											<h5>React Hooks:</h5>
+											<ul>
+												<li><b>useState</b>
+													<br>
+													<code>const [<span style="color:#ff4444;">state</span>, <span style="color:#00b8ff;">setState</span>] = useState(<span style="color:#ff4444;">initialState</span>);</code><br>
+													- useState returns a varaible storing local state and a function to update that variable,<br>
+													- during first rendering, a value of <span style="color:#ff4444;">state</span> variable is as the same as an initially passed value of <span style="color:#ff4444;">initialState</span> variable,<br>
+													- function <span style="color:#00b8ff;">setState</span> is used for updating the local state id est the value of <span style="color:#ff4444;">state</span> variable,<br>
+													- during next render processes, the first value in useState is alwyas the most recent state set by <span style="color:#00b8ff;">setState</span> function.
+												</li>
+											</ul>
 
 
 									</header>
