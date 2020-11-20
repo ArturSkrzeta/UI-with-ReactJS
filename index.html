@@ -206,19 +206,34 @@
 																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>);</code><br>
-													<code>}</code>
+													<code>}</code><br>
+													<code>export default Hello;</code><br>
 												</li>
 											</ul>
 
 											<h5>React Hooks:</h5>
 											<ul>
-												<li><b>useState</b>
+												<li><b>useState</b> - using state of a specific variable we affect web-page HTML:
 													<br>
 													<code>const [<span style="color:#ff4444;">state</span>, <span style="color:#00b8ff;">setState</span>] = useState(<span style="color:#ff4444;">initialState</span>);</code><br>
 													- useState returns a varaible storing local state and a function to update that variable,<br>
 													- during first rendering, a value of <span style="color:#ff4444;">state</span> variable is as the same as an initially passed value of <span style="color:#ff4444;">initialState</span> variable,<br>
 													- function <span style="color:#00b8ff;">setState</span> is used for updating the local state id est the value of <span style="color:#ff4444;">state</span> variable,<br>
 													- during next render processes, the first value in useState is alwyas the most recent state set by <span style="color:#00b8ff;">setState</span> function.
+													- when gettin data from an external API we can save it in a state,<br>
+													- the code:<br>
+													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>const[count, setCount] = useState(0)</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>const increment = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>setCount(count + 1);</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&ltbutton onClick="{increment}"&gtAdd&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&lthi&gt{count}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>);</code><br>
+													<code>}</code><br>
+													<code>export default App;</code>
 												</li>
 											</ul>
 
