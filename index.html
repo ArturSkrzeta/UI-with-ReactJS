@@ -80,7 +80,10 @@
 
 											<h5>ReactJS with DOM:</h5>
 											<ul>
-												<li>ReactJS uses JavaScript XML (JSX) which allows us to write HTML elements into React's code and place them into DOM without any additional methods like createElement().</li>
+												<li>ReactJS uses JavaScript XML (JSX) which allows us to write HTML elements into React's code and place them into DOM without any additional methods like createElement().
+													<br>
+													- instead of writing <code>React.createElement(div)</code> we can simply type <code>&ltdiv&gt</code>.
+												</li>
 												<li>ReactJS provides a selective rendering which results with a performance boost:
 													<br>
 													- it keeps in-memory cache where each change is being computed,<br>
@@ -101,9 +104,23 @@
 													- applicaiton is built from componenets being rendered in logic sequence to the screen.
 												</li>
 												<li>Example component:
-
-
-
+													<br>
+													<code>import React from "react";</code><br>
+													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&lth1&gtHello React!&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>);</code><br>
+													<code>}</code><br>
+													<code>export default App;</code><br>
+													is being rendered by ReactDOM:
+													<br>
+													<code>import React from "react";</code><br>
+													<code>import ReactDOM from "react-dom";</code><br>
+													<code>import App from ".\App";</code><br>
+													<code>ReactDOM.render(&ltApp /&gt, document.getElementById('root'));</code><br>
+													where root is &ltdiv&gt id in main index.html
 												</li>
 												<li>Multiple elements on the same level needs to be wrapped in a container as <b>&ltdiv&gt</b><b>&lt/div&gt</b> or shortly <b>&lt&gt</b><b>&lt/&gt</b> or needs to be returned as an array.
 													<br>
@@ -124,8 +141,28 @@
 													JSX:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <code>&lth1&gt{1 + 2}&lt/h1&gt</code><br>
 													HTML: <code>&lth1&gt3&lt/h1&gt</code>
 												</li>
-
 											</ul>
+
+											<h5>Events:</h5>
+											<ul>
+												<li>We can program what happens when for example button clicked:
+													<br>
+													<code>import React from "react";</code><br><br>
+													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>const printHello = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>console.log("Hello React!")</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>};</code><br><br>&nbsp&nbsp&nbsp&nbsp
+														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>);</code><br>
+													<code>}</code><br>
+													<code>export default App;</code><br>
+												</li>
+											</ul>
+
+
 
 									</header>
 								</div>
@@ -179,7 +216,7 @@
 										 <br>&nbsp&nbsp&nbsp
 										 <code>cd project-name</code>
 									  </li>
-									  <li>Running project:
+									  <li>Running omn localhost:3000:
 									   <br>&nbsp&nbsp&nbsp
 									   <code>npm start</code>
 									  </li>
