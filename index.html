@@ -161,19 +161,25 @@
 													<code>ReactDOM.render(&ltApp /&gt, document.getElementById('root'));</code><br>
 													where root is &ltdiv&gt id in main index.html - file that displays UI on the screen.
 												</li>
-												<li>Multiple elements on the same level needs to be wrapped in a container as <b>&ltdiv&gt</b><b>&lt/div&gt</b> or shortly <b>&lt&gt</b><b>&lt/&gt</b> or needs to be returned as an array.
+												<li>Multiple elements on the same level needs to be wrapped in a parent element like <b>&ltdiv&gt</b><b>&lt/div&gt</b> or shortly <b>&lt&gt</b><b>&lt/&gt</b> or needs to be returned as an array.
 													<br>
 													<code>&lt&gt</code><br>&nbsp&nbsp
-													<code>&ltHeader /&gt</code><br>&nbsp&nbsp
-													<code>&ltContent /&gt</code><br>&nbsp&nbsp
-													<code>&ltFooter /&gt</code><br>
+														<code>&ltHeader /&gt</code><br>&nbsp&nbsp
+														<code>&ltContent /&gt</code><br>&nbsp&nbsp
+														<code>&ltFooter /&gt</code><br>
 													<code>&lt/&gt</code><br>
 													or<br>
 													<code>&ltdiv&gt</code><br>&nbsp&nbsp
-													<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
-													<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
-													<code>&ltli&gt...&lt/li&gt</code><br>
-													<code>&lt/div&gt</code>
+														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+														<code>&ltli&gt...&lt/li&gt</code><br>
+													<code>&lt/div&gt</code><br>
+													or if we don't want to have empty div tags in HTML document:<br>
+													<code>&ltReact.Fragment&gt</code><br>&nbsp&nbsp
+														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+														<code>&ltli&gt...&lt/li&gt</code><br>
+													<code>&lt/React.Fragment&gt</code>
 												</li>
 												<li>We can put JS expressions inside JSX with {}:
 													<br>
@@ -272,6 +278,20 @@
 														<code>);</code><br>
 													<code>}</code><br>
 													<code>export default Hello;</code><br>
+												</li>
+											</ul>
+
+											<h5>Class component:</h5>
+											<ul>
+												<li>So far we has been working with function components, here is how it looks like with class componenet:
+													<br>
+													<code>import React, { Component } from 'react';</code><br>
+													<code>export default class Greetings extends Component {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>state = {}</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>return &lth1&gtHello World&lt/&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>}</code><br>
+													<code>}</code>
 												</li>
 											</ul>
 
