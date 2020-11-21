@@ -12,3 +12,37 @@ return (
   </div>
  );
 ```
+
+## Condition Statements
+```
+import React, { Component } from 'react';
+
+export default class Greetings extends Component {
+
+     state = {
+             name: 'Artur',
+             items: ['item1','item2','item3']
+     };
+     
+     
+     render() {
+         return (
+             <h1>Hi {this.state.name}</h1> or <h1>Hi {this.formatName()}</h1>
+             <div>
+              {this.state.items.lenght === 0 && "Please create a new item"}
+              {this.rendetItems()}
+             </div>
+         )
+     };
+     
+     renderItems() {
+              if (this.state.items.lengt === 0) return <p>There are no items</p>;
+              return <ul>{this.state.items.map(item => <li key={item}>{item}</li>)}</ul>;
+     };
+     
+     formatName() {
+             const { name } = this.state;
+             return name === 'Artur' ? 'Sir' : name;
+     };
+}
+```
