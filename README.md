@@ -47,7 +47,7 @@ export default class Greetings extends Component {
                   <h1>Hi {this.formatName()}</h1>
                   {this.state.items.length === 0 && "Please create a new item"}
                   {this.renderItems()}
-                  <button> onClick={this.handleOk}>OK</button>
+                  <button onClick={this.handleOk}>OK</button>
              </div>
          )
      };
