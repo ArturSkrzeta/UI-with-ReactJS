@@ -24,19 +24,7 @@ export default class Greetings extends Component {
              name: 'Artur',
              items: ['item1','item2','item3']
      };
-     
-     
-     render() {
-         return (
-             <div>
-                  <h1>Hi {this.state.name}</h1>
-                  <h1>Hi {this.formatName()}</h1>
-                  {this.state.items.length === 0 && "Please create a new item"}
-                  {this.renderItems()}
-             </div>
-         )
-     };
-     
+
      renderItems() {
               if (this.state.items.lengt === 0) return <p>There are no items</p>;
               return <ul>{this.state.items.map(item => <li key={item}>{item}</li>)}</ul>;
@@ -46,5 +34,24 @@ export default class Greetings extends Component {
              const { name } = this.state;
              return name === 'Artur' ? 'Sir' : name;
      };
+     
+     handleOk() {
+          console.log('Request submitted');
+     }
+     
+     
+     render() {
+         return (
+             <div>
+                  <h1>Hi {this.state.name}</h1>
+                  <h1>Hi {this.formatName()}</h1>
+                  {this.state.items.length === 0 && "Please create a new item"}
+                  {this.renderItems()}
+                  <button> onClick={this.handleOk}>OK</button>
+             </div>
+         )
+     };
+     
+
 }
 ```
