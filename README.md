@@ -1,4 +1,4 @@
-# UI-with-ReactJS
+# UI with ReactJS
 ## JSX expressions need to have one parent element
 #### This code envokes compiler error:
 ```
