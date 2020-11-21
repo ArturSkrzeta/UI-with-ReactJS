@@ -14,6 +14,7 @@ return (
 ```
 
 ## Condition Statements
+#### true && 'Hi' --> 'Hi'
 ```
 import React, { Component } from 'react';
 
