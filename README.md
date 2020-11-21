@@ -50,6 +50,7 @@ export default class Greetings extends Component {
              <div>
                   <h1>Hi {this.state.name}</h1>
                   <h1>Hi {this.formatName()}</h1>
+                  <p>Level: {this.state.level}</p>
                   {this.state.items.length === 0 && "Please create a new item"}
                   {this.renderItems()}
                   <button onClick={this.handleOk}>OK</button>
