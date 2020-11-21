@@ -15,6 +15,7 @@ return (
 
 ## Condition Statements
 #### true && 'Hi' --> 'Hi'
+#### arro funciton incrementLevel () => {..} only has this kewyord with access to class state
 ```
 import React, { Component } from 'react';
 
@@ -22,9 +23,10 @@ export default class Greetings extends Component {
 
      state = {
              name: 'Artur',
-             items: ['item1','item2','item3']
+             items: ['item1','item2','item3'],
+             level: 0
      };
-
+     
      renderItems() {
               if (this.state.items.lengt === 0) return <p>There are no items</p>;
               return <ul>{this.state.items.map(item => <li key={item}>{item}</li>)}</ul>;
@@ -39,6 +41,9 @@ export default class Greetings extends Component {
           console.log('Request submitted');
      }
      
+     incrementLevel = () => {
+          this.setState({ level: this.state.level + 1 })
+     };
      
      render() {
          return (
@@ -48,6 +53,7 @@ export default class Greetings extends Component {
                   {this.state.items.length === 0 && "Please create a new item"}
                   {this.renderItems()}
                   <button onClick={this.handleOk}>OK</button>
+                  <button onClick={this.incrementLevel}>Level UP!</button>
              </div>
          )
      };
