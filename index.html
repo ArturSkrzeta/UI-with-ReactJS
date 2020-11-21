@@ -116,7 +116,7 @@
 														<code>import React from 'react'</code><br>
 														<code>const element = &lth1&gtHello World&lt/&gt</code><br>
 														- we need to import React anyway.<br>
-													2. Babel compiles JSX into R	eact code,<br>
+													2. Babel compiles JSX expression into React element,<br>
 													3. React:
 														<br>
 														<code>import React from 'react'</code><br>
@@ -287,12 +287,20 @@
 													<br>
 													<code>import React, { Component } from 'react';</code><br>
 													<code>export default class Greetings extends Component {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>state = {}</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>state = {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>name: 'Artur'</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>return &lth1&gtHello World&lt/&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+															<code>return &lth1&gtHi {this.state.name}&lt/h1&gt</code> or <code>&lth1&gtHi {this.formatName()}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>}</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>formatName() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>const { name } = this.state;</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>return name === 'Artur' ? 'Sir' : name;</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>}</code><br>
 													<code>}</code>
 												</li>
+												<li>State is special property in a component that includes any data this component needs.</li>
+												<li>Function formatName() adds a logic for returning a value.</li>
 											</ul>
 
 											<h5>React Hooks:</h5>
