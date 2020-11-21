@@ -288,19 +288,34 @@
 													<code>import React, { Component } from 'react';</code><br>
 													<code>export default class Greetings extends Component {</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>state = {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>name: 'Artur'</code><br>&nbsp&nbsp&nbsp&nbsp
+															<code>name: 'Artur',</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>items: ['item1','item2','item3']</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>return &lth1&gtHi {this.state.name}&lt/h1&gt</code> or <code>&lth1&gtHi {this.formatName()}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>}</code><br>&nbsp&nbsp&nbsp&nbsp
+															<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>&lth1&gtHi {this.state.name}&lt/h1&gt</code> or <code>&lth1&gtHi {this.formatName()}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>&ltul&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																		<code>{this.state.items.map(item => &ltli key={item}&gt{item}&lt/li&gt)}</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>&lt/ul&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>)</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>formatName() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>const { name } = this.state;</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>return name === 'Artur' ? 'Sir' : name;</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>}</code><br>
+														<code>};</code><br>
 													<code>}</code>
 												</li>
 												<li>State is special property in a component that includes any data this component needs.</li>
 												<li>Function formatName() adds a logic for returning a value.</li>
+												<li>What we have in render() function, this is encapsulated in virtual DOM. In the class above, virtual DOM is a tree of 3 elements:
+													<br>
+													- react element: <code>&ltdiv&gt</code>,<br>
+													- 2 children: <code>&lth1&gt</code> and <code>&ltul&gt</code>
+												</li>
+												<li>When state in some of element gets changed, react puts the new virtual DOM (new tree with change) side by side with the old virtual DOM (old tree before change).
+													Based on the comparison, react is able to point the element in which the change happened so that it can update the responding element in a real DOM of a web-page.</li>
 											</ul>
 
 											<h5>React Hooks:</h5>
