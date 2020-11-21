@@ -109,6 +109,19 @@
 													<br>
 													- instead of writing <code>React.createElement(div)</code> we can simply type <code>&ltdiv&gt</code>.
 												</li>
+												<li>To get UI layout from JSX code, it needs to be compiled by JS compiler: Babel.
+													<br>
+													1. JSX:
+														<br>
+														<code>import React from 'react'</code><br>
+														<code>const element = &lth1&gtHello World&lt/&gt</code><br>
+														- we need to import React anyway.<br>
+													2. Babel compiles JSX into R	eact code,<br>
+													3. React:
+														<br>
+														<code>import React from 'react'</code><br>
+														<code>var element = React.createElement("h1", null, "Hello World");</code>
+												</li>
 												<li>ReactJS provides a selective rendering which results with a performance boost:
 													<br>
 													- it keeps in-memory cache where each change is being computed,<br>
