@@ -27,10 +27,14 @@ export default class Greetings extends Component {
      
      render() {
          return (
-             <h1>Hi {this.state.name}</h1> or <h1>Hi {this.formatName()}</h1>
              <div>
+             
+              <h1>Hi {this.state.name}</h1>
+              <h1>Hi {this.formatName()}</h1>
+             
               {this.state.items.lenght === 0 && "Please create a new item"}
               {this.rendetItems()}
+              
              </div>
          )
      };
