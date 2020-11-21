@@ -15,7 +15,7 @@ return (
 
 ## Condition Statements
 #### true && 'Hi' --> 'Hi'
-#### arro funciton incrementLevel () => {..} only has this kewyord with access to class state
+#### arrow funciton incrementLevel = () => {..} only has this keyword with access to class state
 ```
 import React, { Component } from 'react';
 
