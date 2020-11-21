@@ -14,9 +14,6 @@ return (
 ```
 
 ## Condition Statements
-#### true && 'Hi' --> 'Hi'
-#### arrow funciton incrementLevel = () => {..} only has this keyword with access to class state
-#### passing argument to handler function of event with arrow function: onClick={ () => this.incrementLevel(item) }
 ```
 import React, { Component } from 'react';
 
@@ -42,7 +39,9 @@ export default class Greetings extends Component {
           console.log('Request submitted');
      }
      
+     // arrow funciton incrementLevel = () => {..} only has this keyword
      incrementLevel = item => {
+          console.log(this)
           console.log(item)
           this.setState({ level: this.state.level + 1 })
      };
@@ -53,9 +52,14 @@ export default class Greetings extends Component {
                   <h1>Hi {this.state.name}</h1>
                   <h1>Hi {this.formatName()}</h1>
                   <p>Level: {this.state.level}</p>
+                  
+                  {/* true && 'Hi' --> 'Hi' */}
                   {this.state.items.length === 0 && "Please create a new item"}
+                  
                   {this.renderItems()}
                   <button onClick={this.handleOk}>OK</button>
+                  
+                  {/* passing argument to handler function of event with arrow function: onClick={ () => this.incrementLevel(item) */}
                   <button onClick={ () => this.incrementLevel(item) }>Level UP!</button>
              </div>
          )
