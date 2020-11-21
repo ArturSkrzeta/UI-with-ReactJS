@@ -49,7 +49,17 @@
 										<h2>UI for ReactJS</h2>
 										<h3>Intro</h3>
 
-											<p>ReactJS - is an open-source JavaScript web framework for building user interface - front-end of web applications.</p>
+											<p>ReactJS - is an open-source JavaScript web framework for building fast and interactive user interfaces - front-end of web applications.</p>
+
+											<h5>ReactJS basics:</h5>
+											<ul>
+												<li>Basic element is a Component - a piece of UI.</li>
+												<li>When building application we build a bunch of independent, isolated and reusable components.</li>
+												<li>Every application has at least one component - the root component.</li>
+												<li>Root component contains child components making user interface a tree of components.</li>
+												<li>Component can be either a class or a function.</li>
+											</ul>
+
 
 											<h5>Document Object Model:</h5>
 											<ul>
@@ -66,11 +76,22 @@
 												</li>
 											</ul>
 
-											<h5>JavaScript with DOM:</h5>
+											<h5>Virtual DOM:</h5>
 											<ul>
-												<li>When web-page loading, the browser creates DOM of that page.</li>
-												<li>DOM becomes the representation of web-page's HTML document and acts as an interface between JavaScript and web-page's HTML document itself.</li>
-												<li>That solution allows making dynamic actions on web-page with JavaScript code:
+												<li>When web-page loading, the browser creates DOM which becomes the representation of web-page's HTML document.</li>
+												<li>React copies and keeps a lightweight in-memory represenation of browser's DOM which we refer to as the <b>virtual DOM</b>	.</li>
+												<li>Browser's DOM in-memory representationis stays synced with virtual DOM by a library such as ReactDOM. This process is called <b>reconciliation</b>.</li>
+												<li>When code rendered in React, the otput is a JS object called React Element that maps to a virtual DOM Element:
+													<br>
+													1. State of component changes.<br>
+													2. We get a new React element in virtual DOM.<br>
+													3. React compares the element with state of a previous one.<br>
+													4. React figures what has been changed.<br>
+													5. React updates a part of real DOM so that it can be in sync with virtual DOM.
+												</li>
+												<img src="images/vdom.JPG">
+												<li>In that way, we don't have to work with real browser DOM rendering all page when some element updates.</li>
+												<li>That solution allows making dynamic actions on web-page:
 													<br>
 													- adding/removing HTML elements or their attributes,<br>
 													- changing CSS styles,<br>
