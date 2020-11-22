@@ -321,7 +321,7 @@
 
 											<h5>React Hooks:</h5>
 											<ul>
-												<li><b>useState</b> - using state of a specific variable we affect web-page HTML:
+												<li><b>useState</b> - asigning a state to a variable with modifier assigned to it:
 													<br>
 													<code>const [<span style="color:#ff4444;">state</span>, <span style="color:#00b8ff;">setState</span>] = useState(<span style="color:#ff4444;">initialState</span>);</code><br>
 													- useState returns a varaible storing local state and a function to update that variable,<br>
@@ -358,6 +358,27 @@
 														<code>);</code><br>
 													<code>}</code><br>
 													<code>export default App;</code><br>
+												</li>
+												<li>useEffect from <b>function App()</b> component:
+													<br>
+													<code>useEffect(() => {</code><br>&nbsp&nbsp&nbsp&nbsp
+														<code>const getDataForSource = async () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>await fetch("https://...")</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>.then((response) => response.json())</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>.then((data) => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>const countires = data.map((country) => ({</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																		<code>name: country.country,</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																		<code>value: country.value,</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>}));</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>setCountires(countries);</code>&nbsp//modifier from useState<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>});</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>};</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>getDataForSource();</code><br>
+													<code>}, <span style="color:#20f157;">[]</span>);</code><br>
+													- runs a piece of code based on a given condition,<br>
+													- code within useEffect runs only once when component loads and not again after if no condition - when <span style="color:#20f157;">[]</span> is empty,<br>
+													- code within useEffect runs only once when component loads and when condition <span style="color:#20f157;">[countires]</span> given,<br>
+													- when condition <span style="color:#20f157;">[countires]</span> given, code in useEffect runs when variable <span style="color:#20f157;">countires</span> loads or changes.
 												</li>
 											</ul>
 
