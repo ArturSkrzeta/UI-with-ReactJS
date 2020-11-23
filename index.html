@@ -294,6 +294,8 @@
 															<code>items: ['item1','item2','item3']</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 														<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
 															<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																	<code>&lth1&gtHi {this.state.name}&lt/h1&gt</code> or <code>&lth1&gtHi {this.formatName()}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -309,9 +311,16 @@
 														<code>};</code><br>
 													<code>}</code>
 												</li>
-												<li>State is special property in a component that includes any data the component needs:<br>
-													- constants like <code>const nickname = 'Arturro'</code> or variables like <code>let postion = 'Specialist'</code> are rendered only once when componend is being rendered (they do not redner real-time afterwards),<br>
-													- all data being rendered real-time is wrapped in a <b>state{}</b> as we observe its state in current moment - when variable value in <b>state{}</b> gets updated, it changes in every React element that uses it, even after first componend rendering.
+												<li><b>State</b> is special property in a component that includes any data the component needs:<br>
+													- constants like <code>const nickname = 'Arturro'</code><br>
+													 	or variables like <code>let postion = 'Specialist'</code><br>
+														are rendered only once when componend is being rendered (they do not redner real-time afterwards),<br>
+													- all data being rendered real-time is wrapped in a <b>state{}</b> as we observe its state in the current moment,<br>
+													- when variable value in <b>state{}</b> gets updated, it changes in every React element that uses it, even after first componend rendering,<br>
+													- we can access variable in state by keyword <b>this</b>:<br>
+														<code>{this.state.name},</code><br>
+													- we can modify variable in state with <b>setState</b>:<br>
+														<code>{this.setState{name='Arthur'}}</code>
 												</li>
 												<li>Function <b>formatName()</b> adds a logic for returning a value.</li>
 												<li>What we have in <b>render()</b> function, this is encapsulated in virtual DOM. In the class above, virtual DOM is a tree of 3 elements:
@@ -323,6 +332,14 @@
 												<li>When state in some of element gets changed, react puts the new virtual DOM (new tree with change) side by side with the old virtual DOM (old tree before change).
 													Based on the comparison, react is able to point the element in which the change happened so that it can update the responding element in a real DOM of a web-page.</li>
 											</ul>
+
+											<table>
+												<tr><th>Class component</th><th>Function componenet</th></tr>
+												<tr><td>Stateful</td><td>Stateless</td></tr>
+												<tr><td>Declaring variable in class state{}</td><td>Declaring variable in useState hook</td></tr>
+												<tr><td>Accessing variable state with this.state.variableName</td><td>Accessing variable with variableName</td></tr>
+												<tr><td>Changing variable state with this.setState({title:'view'})</td><td>Changing variable with setVariableName('New') </td></tr>
+											</table>
 
 											<h5>React Hooks:</h5>
 											<ul>
