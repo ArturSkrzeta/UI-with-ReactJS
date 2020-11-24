@@ -49,9 +49,9 @@
 										<h2>ReactJS for building UI</h2>
 										<h3>Intro</h3>
 
-										<p>ReactJS, or simply React, is an open-source JavaScript library for building fast and interactive user interfaces - front-end of web applications.
-											React takes care of rendering view and making sure the view is in sync with the state.
-											Thus, when building web application, there is need to apply additional libraries for routing and calling HTTP requests e.g. Flask or Django.</p>
+										<p>ReactJS, or simply React, is an open-source JavaScript library for building fast and interactive user interfaces i.e. front-end of web applications.
+											React takes care of rendering view (putting page on the screen) and making sure the view is in sync with the state (data values).
+											We can get state from external API or we can apply some additional libraries and database for routing and calling HTTP requests e.g. Flask or Django.</p>
 
 										<h5>ReactJS basics:</h5>
 										<ul>
@@ -294,8 +294,6 @@
 														<code>items: ['item1','item2','item3']</code><br>&nbsp&nbsp&nbsp&nbsp
 													<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
 													<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-
 														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 																<code>&lth1&gtHi {this.state.name}&lt/h1&gt</code> or <code>&lth1&gtHi {this.formatName()}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -339,6 +337,7 @@
 											<tr><td>Declaring variable in class state{}</td><td>Declaring variable in useState hook</td></tr>
 											<tr><td>Accessing variable state with this.state.variableName</td><td>Accessing variable with variableName</td></tr>
 											<tr><td>Changing variable state with this.setState({title:'view'})</td><td>Changing variable with setVariableName('New') </td></tr>
+											<tr><td>Usaually used when I need to work with state that gets updated frequently</td><td>Usaually used when I don't need to be working with state</td></tr>
 										</table>
 
 										<h5>React Hooks:</h5>
@@ -419,13 +418,14 @@
 															<code>return &ltdiv key="{i.title}"&gt{ i.title }&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 														<code>})</code><br>&nbsp&nbsp&nbsp&nbsp
 													<code>}</code><br>&nbsp&nbsp&nbsp&nbsp
-													<code>return () {...}</code><br>
+													<code>return &ltdiv&gt {elements} &lt/div&gt</code><br>
 												<code>}</code>
 											</li>
+											<li><code>const items</code> takes <code>items</code> from <code>state {}</code> using this keyword: <code>this.state.items</code></li>
 											<li>Every item from a list is mapped with a passed function that returns div element.</li>
 											<li>Each div element needs to have an unique key assigned:
 												<br>
-												<code>&ltdiv key="{i.title}"&gt{ i.title }&lt/div&gt</code>
+												<code>&ltdiv key="{i.title}"&gt{i.title}&lt/div&gt</code>
 											</li>
 										</ul>
 									</header>
