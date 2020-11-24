@@ -403,6 +403,31 @@
 												- when condition <span style="color:#20f157;">[countires]</span> given, code in useEffect runs when variable <span style="color:#20f157;">countires</span> loads or changes.
 											</li>
 										</ul>
+
+										<h5>Map function on a list of items:</h5>
+										<ul>
+											<li>Map function allows to execute a defined function on every element of a passed list:<br>
+												<code>class ... </code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>state = {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>items = [</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>{ id: '1', title: 'Amazing product' },</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>{ id: '2', title: 'Nice product' },</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>]</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>}</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>const items = this.state.items.map(i => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>return &ltdiv key="{i.title}"&gt{ i.title }&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>})</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>}</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return () {...}</code><br>
+												<code>}</code>
+											</li>
+											<li>Every item from a list is mapped with a passed function that returns div element.</li>
+											<li>Each div element needs to have an unique key assigned:
+												<br>
+												<code>&ltdiv key="{i.title}"&gt{ i.title }&lt/div&gt</code>
+											</li>
+										</ul>
 									</header>
 								</div>
 							</section>
