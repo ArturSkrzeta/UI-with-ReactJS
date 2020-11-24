@@ -49,362 +49,360 @@
 										<h2>ReactJS for building UI</h2>
 										<h3>Intro</h3>
 
-											<p>ReactJS - is an open-source JavaScript library for building fast and interactive user interfaces - front-end of web applications.
-												React takes care of rendering view and making sure the view is in sync with the state.
-												Thus, when building web application, there is need to apply additional libraries for routing and calling HTTP requests e.g. Flask or Django.</p>
+										<p>ReactJS, or simply React, is an open-source JavaScript library for building fast and interactive user interfaces - front-end of web applications.
+											React takes care of rendering view and making sure the view is in sync with the state.
+											Thus, when building web application, there is need to apply additional libraries for routing and calling HTTP requests e.g. Flask or Django.</p>
 
-											<h5>ReactJS basics:</h5>
-											<ul>
-												<li>Basic element is a Component - a piece of UI.</li>
-												<li>When building application we build a bunch of independent, isolated and reusable components.</li>
-												<li>Every application has at least one component - the root component.</li>
-												<li>Root component contains child components making user interface a tree of components.</li>
-												<li>Component can be either a class or a function.</li>
-											</ul>
+										<h5>ReactJS basics:</h5>
+										<ul>
+											<li>Basic element is a Component - a piece of UI.</li>
+											<li>When building application we build a bunch of independent, isolated and reusable components.</li>
+											<li>Every application has at least one component - the root component.</li>
+											<li>Root component contains child components making user interface a tree of components.</li>
+											<li>Component can be either a class or a function.</li>
+										</ul>
 
 
-											<h5>Document Object Model:</h5>
-											<ul>
-												<li>React receives data coming from database or external API and renders it into <b>Document Object Model (DOM)</b>.</li>
-												<li>DOM is cross-platform and language-independent interface for XML or HTML documents.
-													<br>
-													- in other words, DOM is an object oriented representation of XML/HTML document,<br>
-													- DOM structures XML/HTML into logical tree consisted of nodes where each node constitutes an object representing a part of document,<br>
-													- e.g. <b>&lttittle&gt</b> is a single node of parent node <b>&lthead&gt</b> in HTML document,<br><br>
-													<img src="images/DOM.png" width="380"><br>
-													- DOM has methods that allow accessing three's elements programmatically,<br>
-													- those methods enable us to interfere document structure, changing style or content of an element,<br>
-													- nodes also have event handlers that can react on user's behaviour changing it's structure/style/content.<br>
-												</li>
-											</ul>
-
-											<h5>Virtual DOM:</h5>
-											<ul>
-												<li>When web-page loading, the browser creates DOM which becomes the representation of web-page's HTML document.</li>
-												<li>React copies and keeps a lightweight in-memory represenation of browser's DOM which we refer to as the <b>virtual DOM</b>	.</li>
-												<li>Browser's DOM in-memory representationis stays synced with virtual DOM by a library such as ReactDOM. This process is called <b>reconciliation</b>.</li>
-												<li>When code rendered in React, the otput is a JS object called React Element that maps to a virtual DOM Element:
-													<br>
-													1. State of component changes.<br>
-													2. We get a new React element in virtual DOM.<br>
-													3. React compares the element with state of a previous one.<br>
-													4. React figures what has been changed.<br>
-													5. React updates a part of real DOM so that it can be in sync with virtual DOM.
-												</li>
+										<h5>Document Object Model:</h5>
+										<ul>
+											<li>React receives data coming from database or external API and renders it into <b>Document Object Model (DOM)</b>.</li>
+											<li>DOM is cross-platform and language-independent interface for XML or HTML documents.
 												<br>
-												<img src="images/vdom.JPG" width="550">
-												<li><b>React = reacts to state changes.</b></li>
-												<li>In that way, we don't have to work with real browser's DOM rendering all page each time some element gets updated, react updates only one specific element which change concerns.</li>
-												<li>That solution allows making dynamic actions on web-page:
-													<br>
-													- adding/removing HTML elements or their attributes,<br>
-													- changing CSS styles,<br>
-													- reacting to events and creating new ones.<br>
-												</li>
-											</ul>
+												- in other words, DOM is an object oriented representation of XML/HTML document,<br>
+												- DOM structures XML/HTML into logical tree consisted of nodes where each node constitutes an object representing a part of document,<br>
+												- e.g. <b>&lttittle&gt</b> is a single node of parent node <b>&lthead&gt</b> in HTML document,<br><br>
+												<img src="images/DOM.png" width="380"><br>
+												- DOM has methods that allow accessing three's elements programmatically,<br>
+												- those methods enable us to interfere document structure, changing style or content of an element,<br>
+												- nodes also have event handlers that can react on user's behaviour changing it's structure/style/content.<br>
+											</li>
+										</ul>
 
-											<h5>ReactJS with DOM:</h5>
+										<h5>Virtual DOM:</h5>
+										<ul>
+											<li>When web-page loading, the browser creates DOM which becomes the representation of web-page's HTML document.</li>
+											<li>React copies and keeps a lightweight in-memory represenation of browser's DOM which we refer to as the <b>virtual DOM</b>	.</li>
+											<li>Browser's DOM in-memory representationis stays synced with virtual DOM by a library such as ReactDOM. This process is called <b>reconciliation</b>.</li>
+											<li>When code rendered in React, the otput is a JS object called React Element that maps to a virtual DOM Element:
+												<br>
+												1. State of component changes.<br>
+												2. We get a new React element in virtual DOM.<br>
+												3. React compares the element with state of a previous one.<br>
+												4. React figures what has been changed.<br>
+												5. React updates a part of real DOM so that it can be in sync with virtual DOM.
+											</li>
+											<br>
+											<img src="images/vdom.JPG" width="550">
+											<li><b>React = reacts to state changes.</b></li>
+											<li>In that way, we don't have to work with real browser's DOM rendering all page each time some element gets updated, react updates only one specific element which change concerns.</li>
+											<li>That solution allows making dynamic actions on web-page:
+												<br>
+												- adding/removing HTML elements or their attributes,<br>
+												- changing CSS styles,<br>
+												- reacting to events and creating new ones.<br>
+											</li>
+										</ul>
+
+										<h5>ReactJS with DOM:</h5>
+										<ul>
+											<li>ReactJS uses JavaScript XML (JSX) which allows us to write HTML elements into React's code and place them into DOM without any additional methods like createElement().
+												<br>
+												- instead of writing <code>React.createElement(div)</code> we can simply type <code>&ltdiv&gt</code>.
+											</li>
+											<li>To get UI layout from JSX code, it needs to be compiled by JS compiler: Babel.
+												<br>
+												1. JSX:
+													<br>
+													<code>import React from 'react'</code><br>
+													<code>const element = &lth1&gtHello World&lt/&gt</code><br>
+													- we need to import React anyway.<br>
+												2. Babel compiles JSX expression into React element,<br>
+												3. React:
+													<br>
+													<code>import React from 'react'</code><br>
+													<code>var element = React.createElement("h1", null, "Hello World");</code>
+											</li>
+											<li>ReactJS provides a selective rendering which results with a performance boost:
+												<br>
+												- it keeps in-memory cache where each change is being computed,<br>
+												- it renders only single DOM component that actually chagne instead of rendering entire page each time change is made,<br>
+												- rendering selectively mens e.g. saving a lot work for recalculating CSS style and rerendering entire web page.
+											</li>
+										</ul>
+
+											<h5>ReactJS structure:</h5>
 											<ul>
-												<li>ReactJS uses JavaScript XML (JSX) which allows us to write HTML elements into React's code and place them into DOM without any additional methods like createElement().
-													<br>
-													- instead of writing <code>React.createElement(div)</code> we can simply type <code>&ltdiv&gt</code>.
-												</li>
-												<li>To get UI layout from JSX code, it needs to be compiled by JS compiler: Babel.
-													<br>
-													1. JSX:
-														<br>
-														<code>import React from 'react'</code><br>
-														<code>const element = &lth1&gtHello World&lt/&gt</code><br>
-														- we need to import React anyway.<br>
-													2. Babel compiles JSX expression into React element,<br>
-													3. React:
-														<br>
-														<code>import React from 'react'</code><br>
-														<code>var element = React.createElement("h1", null, "Hello World");</code>
-												</li>
-												<li>ReactJS provides a selective rendering which results with a performance boost:
-													<br>
-													- it keeps in-memory cache where each change is being computed,<br>
-													- it renders only single DOM component that actually chagne instead of rendering entire page each time change is made,<br>
-													- rendering selectively mens e.g. saving a lot work for recalculating CSS style and rerendering entire web page.
-												</li>
-											</ul>
+											<li>We can say that ReactJS is built with units called components:
+												<br>
+												- component is a reuseable, sigle responsibility piece of code that can be rendered many times,<br>
+												- components are rerendered to a particular DOM element using React DOM library,<br>
+												- during component rendering, we can pass parameters when calling it,<br>
+												- we can declare component as a function or a class,<br>
+												- it contains all of the JSX code, JS logic and CSS styling,<br>
+												- applicaiton is built from componenets being rendered in logic sequence to the screen,<br>
+												- it's a good practice to keep all the componenect in '.\components' directory e.g. '.\components\navi.jsx'.
+											</li>
+											<li>Root component:
+												<br>
+												<code>import React from "react";</code><br>
+												<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&lth1&gtHello React!&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>);</code><br>
+												<code>}</code><br>
+												<code>export default App;</code><br>
+												is being rendered by ReactDOM:
+												<br>
+												<code>import React from "react";</code><br>
+												<code>import ReactDOM from "react-dom";</code><br>
+												<code>import App from ".\App";</code><br>
+												<code>ReactDOM.render(&ltApp /&gt, document.getElementById('root'));</code><br>
+												where root is &ltdiv&gt id in main index.html - file that displays UI on the screen.
+											</li>
+											<li>Multiple elements on the same level needs to be wrapped in a parent element like <b>&ltdiv&gt</b><b>&lt/div&gt</b> or shortly <b>&lt&gt</b><b>&lt/&gt</b> or needs to be returned as an array.
+												<br>
+												<code>&lt&gt</code><br>&nbsp&nbsp
+													<code>&ltHeader /&gt</code><br>&nbsp&nbsp
+													<code>&ltContent /&gt</code><br>&nbsp&nbsp
+													<code>&ltFooter /&gt</code><br>
+												<code>&lt/&gt</code><br>
+												or<br>
+												<code>&ltdiv&gt</code><br>&nbsp&nbsp
+													<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+													<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+													<code>&ltli&gt...&lt/li&gt</code><br>
+												<code>&lt/div&gt</code><br>
+												or if we don't want to have empty div tags in HTML document:<br>
+												<code>&ltReact.Fragment&gt</code><br>&nbsp&nbsp
+													<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+													<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
+													<code>&ltli&gt...&lt/li&gt</code><br>
+												<code>&lt/React.Fragment&gt</code>
+											</li>
+											<li>We can put JS expressions inside JSX with {}:
+												<br>
+												JSX:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <code>&lth1&gt{1 + 2}&lt/h1&gt</code><br>
+												HTML: <code>&lth1&gt3&lt/h1&gt</code>
+											</li>
+										</ul>
 
-												<h5>ReactJS structure:</h5>
-												<ul>
-												<li>We can say that ReactJS is built with units called components:
-													<br>
-													- component is a reuseable, sigle responsibility piece of code that can be rendered many times,<br>
-													- components are rerendered to a particular DOM element using React DOM library,<br>
-													- during component rendering, we can pass parameters when calling it,<br>
-													- we can declare component as a function or a class,<br>
-													- it contains all of the JSX code, JS logic and CSS styling,<br>
-													- applicaiton is built from componenets being rendered in logic sequence to the screen,<br>
-													- it's a good practice to keep all the componenect in '.\components' directory e.g. '.\components\navi.jsx'.
-												</li>
-												<li>Root component:
-													<br>
-													<code>import React from "react";</code><br>
-													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&lth1&gtHello React!&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>);</code><br>
-													<code>}</code><br>
-													<code>export default App;</code><br>
-													is being rendered by ReactDOM:
-													<br>
-													<code>import React from "react";</code><br>
-													<code>import ReactDOM from "react-dom";</code><br>
-													<code>import App from ".\App";</code><br>
-													<code>ReactDOM.render(&ltApp /&gt, document.getElementById('root'));</code><br>
-													where root is &ltdiv&gt id in main index.html - file that displays UI on the screen.
-												</li>
-												<li>Multiple elements on the same level needs to be wrapped in a parent element like <b>&ltdiv&gt</b><b>&lt/div&gt</b> or shortly <b>&lt&gt</b><b>&lt/&gt</b> or needs to be returned as an array.
-													<br>
-													<code>&lt&gt</code><br>&nbsp&nbsp
-														<code>&ltHeader /&gt</code><br>&nbsp&nbsp
-														<code>&ltContent /&gt</code><br>&nbsp&nbsp
-														<code>&ltFooter /&gt</code><br>
-													<code>&lt/&gt</code><br>
-													or<br>
-													<code>&ltdiv&gt</code><br>&nbsp&nbsp
-														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
-														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
-														<code>&ltli&gt...&lt/li&gt</code><br>
-													<code>&lt/div&gt</code><br>
-													or if we don't want to have empty div tags in HTML document:<br>
-													<code>&ltReact.Fragment&gt</code><br>&nbsp&nbsp
-														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
-														<code>&ltli&gt...&lt/li&gt</code><br>&nbsp&nbsp
-														<code>&ltli&gt...&lt/li&gt</code><br>
-													<code>&lt/React.Fragment&gt</code>
-												</li>
-												<li>We can put JS expressions inside JSX with {}:
-													<br>
-													JSX:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <code>&lth1&gt{1 + 2}&lt/h1&gt</code><br>
-													HTML: <code>&lth1&gt3&lt/h1&gt</code>
-												</li>
-											</ul>
+										<h5>Anonymous function and arrow function:</h5>
+										<ul>
+											<li>Anonymous function:
+												<br>
+												<code>{users.map(function(user) {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return &ltUser name={user.name} surname={user.surname} /&gt</code><br>
+												<code>})}</code>
+											</li>
+											<li>Arrow function:
+												<br>
+												<code>{users.map(user => {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return &ltUser name={user.name} surname={user.surname} /&gt</code><br>
+												<code>})}</code>
+											<li>Arrow function in one line:
+												<br>
+												<code>{users.map(user => &ltUser name={user.name} species={user.species} /&gt )} </code>
+											</li>
+											<li>Arrow function with no 'return' keyword:
+												<br>
+												<code>{users.map(user => (</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>&ltUser name={user.name} species={user.species} /&gt</code><br>
+												<code>))}</code>
+											</li>
+										</ul>
 
-											<h5>Anonymous function and arrow function:</h5>
-											<ul>
-												<li>Anonymous function:
-													<br>
-													<code>{users.map(function(user) {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return &ltUser name={user.name} surname={user.surname} /&gt</code><br>
-													<code>})}</code>
-												</li>
-												<li>Arrow function:
-													<br>
-													<code>{users.map(user => {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return &ltUser name={user.name} surname={user.surname} /&gt</code><br>
-													<code>})}</code>
-												<li>Arrow function in one line:
-													<br>
-													<code>{users.map(user => &ltUser name={user.name} species={user.species} /&gt )} </code>
-												</li>
-												<li>Arrow function with no 'return' keyword:
-													<br>
-													<code>{users.map(user => (</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>&ltUser name={user.name} species={user.species} /&gt</code><br>
-													<code>))}</code>
-												</li>
-											</ul>
+										<h5>Events:</h5>
+										<ul>
+											<li>We can program what happens when for example button clicked:
+												<br>
+												<code>import React from "react";</code><br>
+												<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>const printHello = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>console.log("Hello React!")</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>);</code><br>
+												<code>}</code><br>
+												<code>export default App;</code><br>
+											</li>
+										</ul>
 
-											<h5>Events:</h5>
-											<ul>
-												<li>We can program what happens when for example button clicked:
-													<br>
-													<code>import React from "react";</code><br>
-													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>const printHello = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>console.log("Hello React!")</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>);</code><br>
-													<code>}</code><br>
-													<code>export default App;</code><br>
-												</li>
-											</ul>
+										<h5>Importing components:</h5>
+										<ul>
+											<li>We export printHello function to a separate componenet and import it into mainApp function:
+												<br>
+												<code>import React from "react";</code><br>
+												<code>import Hello from ".\printHello";</code><br>
+												<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltHello /&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>);</code><br>
+												<code>}</code><br>
+												<code>export default App;</code><br>
+											</li>
+										</ul>
 
-											<h5>Importing components:</h5>
-											<ul>
-												<li>We export printHello function to a separate componenet and import it into mainApp function:
-													<br>
-													<code>import React from "react";</code><br>
-													<code>import Hello from ".\printHello";</code><br>
-													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&ltHello /&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>);</code><br>
-													<code>}</code><br>
-													<code>export default App;</code><br>
-												</li>
-											</ul>
+										<h5>Passing parameters into components:</h5>
+										<ul>
+											<li>App.js:
+												<br>
+												<code>import React from "react";</code><br>
+												<code>import Hello from ".\printHello";</code><br>
+												<code>function App() {</code>or with arrow function:<code>const App = () => {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltHello <span style="color:#44ff75;">name="Artur"</span>/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>);</code><br>
+												<code>}</code><br>
+												<code>export default App;</code>
+											</li>
+											<li>printHello.js:
+												<br>
+												<code>import React from "react";</code><br>
+												<code>function Hello(<span style="color:#44ff75;">props</span>) {</code>or with arrow function:<code>const Hello = (<span style="color:#44ff75;">props</span>) => {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>const printHello = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>console.log("Hello <span style="color:#44ff75;">{props.name}</span>!")</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>);</code><br>
+												<code>}</code><br>
+												<code>export default Hello;</code><br>
+											</li>
+										</ul>
 
-											<h5>Passing parameters into components:</h5>
-											<ul>
-												<li>App.js:
-													<br>
-													<code>import React from "react";</code><br>
-													<code>import Hello from ".\printHello";</code><br>
-													<code>function App() {</code>or with arrow function:<code>const App = () => {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&ltHello <span style="color:#44ff75;">name="Artur"</span>/&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>);</code><br>
-													<code>}</code><br>
-													<code>export default App;</code>
-												</li>
-												<li>printHello.js:
-													<br>
-													<code>import React from "react";</code><br>
-													<code>function Hello(<span style="color:#44ff75;">props</span>) {</code>or with arrow function:<code>const Hello = (<span style="color:#44ff75;">props</span>) => {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>const printHello = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>console.log("Hello <span style="color:#44ff75;">{props.name}</span>!")</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&ltbutton onClick="{printHello}"&gtHello&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>);</code><br>
-													<code>}</code><br>
-													<code>export default Hello;</code><br>
-												</li>
-											</ul>
-
-											<h5>Class component:</h5>
-											<ul>
-												<li>So far we has been working with function components, here is how it looks like with class componenet:
-													<br>
-													<code>import React, { Component } from 'react';</code><br>
-													<code>export default class Greetings extends Component {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>const nickname = 'Arturro'</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>let postion = 'Specialist'</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>state = {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>name: 'Artur',</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>items: ['item1','item2','item3']</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+										<h5>Class component:</h5>
+										<ul>
+											<li>So far we has been working with function components, here is how it looks like with class componenet:
+												<br>
+												<code>import React, { Component } from 'react';</code><br>
+												<code>export default class Greetings extends Component {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>const nickname = 'Arturro'</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>let postion = 'Specialist'</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>state = {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>name: 'Artur',</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>items: ['item1','item2','item3']</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>render() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
 
-															<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>&lth1&gtHi {this.state.name}&lt/h1&gt</code> or <code>&lth1&gtHi {this.formatName()}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>&ltul&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																		<code>{this.state.items.map(item => &ltli key={item}&gt{item}&lt/li&gt)}</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>&lt/ul&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>)</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>formatName() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>const { name } = this.state;</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>return name === 'Artur' ? 'Sir' : name;</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>};</code><br>
-													<code>}</code>
-												</li>
-												<li><b>State</b> is special property in a component that includes any data the component needs:<br>
-													- constants like <code>const nickname = 'Arturro'</code><br>
-													 	or variables like <code>let postion = 'Specialist'</code><br>
-														are rendered only once when componend is being rendered (they do not redner real-time afterwards),<br>
-													- all data being rendered real-time is wrapped in a <b>state{}</b> as we observe its state in the current moment,<br>
-													- when variable value in <b>state{}</b> gets updated, it changes in every React element that uses it, even after first componend rendering,<br>
-													- we can access variable in state by keyword <b>this</b>:<br>
-														<code>{this.state.name},</code><br>
-													- we can modify variable in state with <b>setState</b>:<br>
-														<code>{this.setState{name='Arthur'}}</code>
-												</li>
-												<li>Function <b>formatName()</b> adds a logic for returning a value.</li>
-												<li>What we have in <b>render()</b> function, this is encapsulated in virtual DOM. In the class above, virtual DOM is a tree of 3 elements:
-													<br>
-													- react element: <code>&ltdiv&gt</code>,<br>
-													- 2 children: <code>&lth1&gt</code> and <code>&ltul&gt</code><br><br>
-													<img src="images/rendering.JPG">
-												</li>
-												<li>When state in some of element gets changed, react puts the new virtual DOM (new tree with change) side by side with the old virtual DOM (old tree before change).
-													Based on the comparison, react is able to point the element in which the change happened so that it can update the responding element in a real DOM of a web-page.</li>
-											</ul>
+														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&lth1&gtHi {this.state.name}&lt/h1&gt</code> or <code>&lth1&gtHi {this.formatName()}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&ltul&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>{this.state.items.map(item => &ltli key={item}&gt{item}&lt/li&gt)}</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&lt/ul&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>)</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>formatName() {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>const { name } = this.state;</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>return name === 'Artur' ? 'Sir' : name;</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>};</code><br>
+												<code>}</code>
+											</li>
+											<li><b>State</b> is special property in a component that includes any data the component needs:<br>
+												- constants like <code>const nickname = 'Arturro'</code><br>
+												 	or variables like <code>let postion = 'Specialist'</code><br>
+													are rendered only once when componend is being rendered (they do not redner real-time afterwards),<br>
+												- all data being rendered real-time is wrapped in a <b>state{}</b> as we observe its state in the current moment,<br>
+												- when variable value in <b>state{}</b> gets updated, it changes in every React element that uses it, even after first componend rendering,<br>
+												- we can access variable in state by keyword <b>this</b>:<br>
+													<code>{this.state.name},</code><br>
+												- we can modify variable in state with <b>setState</b>:<br>
+													<code>{this.setState{name='Arthur'}}</code>
+											</li>
+											<li>Function <b>formatName()</b> adds a logic for returning a value.</li>
+											<li>What we have in <b>render()</b> function, this is encapsulated in virtual DOM. In the class above, virtual DOM is a tree of 3 elements:
+												<br>
+												- react element: <code>&ltdiv&gt</code>,<br>
+												- 2 children: <code>&lth1&gt</code> and <code>&ltul&gt</code><br><br>
+												<img src="images/rendering.JPG">
+											</li>
+											<li>When state in some of element gets changed, react puts the new virtual DOM (new tree with change) side by side with the old virtual DOM (old tree before change).
+												Based on the comparison, react is able to point the element in which the change happened so that it can update the responding element in a real DOM of a web-page.</li>
+										</ul>
 
-											<table>
-												<tr><th>Class component</th><th>Function componenet</th></tr>
-												<tr><td>Stateful</td><td>Stateless</td></tr>
-												<tr><td>Declaring variable in class state{}</td><td>Declaring variable in useState hook</td></tr>
-												<tr><td>Accessing variable state with this.state.variableName</td><td>Accessing variable with variableName</td></tr>
-												<tr><td>Changing variable state with this.setState({title:'view'})</td><td>Changing variable with setVariableName('New') </td></tr>
-											</table>
+										<table>
+											<tr><th>Class component</th><th>Function componenet</th></tr>
+											<tr><td>Stateful</td><td>Stateless</td></tr>
+											<tr><td>Declaring variable in class state{}</td><td>Declaring variable in useState hook</td></tr>
+											<tr><td>Accessing variable state with this.state.variableName</td><td>Accessing variable with variableName</td></tr>
+											<tr><td>Changing variable state with this.setState({title:'view'})</td><td>Changing variable with setVariableName('New') </td></tr>
+										</table>
 
-											<h5>React Hooks:</h5>
-											<ul>
-												<li><b>useState</b> - asigning a state to a variable with modifier assigned to it:
-													<br>
-													<code>const [<span style="color:#ff4444;">state</span>, <span style="color:#00b8ff;">setState</span>] = useState(<span style="color:#ff4444;">initialState</span>);</code><br>
-													- useState returns a varaible storing local state and a function to update that variable,<br>
-													- during first rendering, a value of <span style="color:#ff4444;">state</span> variable is as the same as an initially passed value of <span style="color:#ff4444;">initialState</span> variable,<br>
-													- function <span style="color:#00b8ff;">setState</span> is used for updating the local state id est the value of <span style="color:#ff4444;">state</span> variable,<br>
-													- during next render processes, the first value in useState is alwyas the most recent state set by <span style="color:#00b8ff;">setState</span> function.<br>
-													- the example code:<br>
-													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>const[count, setCount] = useState(0)</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>const increment = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>setCount(count + 1);</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&ltbutton onClick="{increment}"&gtAdd&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>&lthi&gt{count}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>);</code><br>
-													<code>}</code><br>
-													<code>export default App;</code><br>
-													- when getting data from an external API we can save it in a state,<br>
-													<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>const[clients, setClients] = useState([</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>{name:'Artur', surname:'Skrzeta'},</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>{name:'Jan', surname:'Kowalski'},</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>{name:'Jonh', surname:'Smith'}</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>]);</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&ltdiv className="app"&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>{users.map(user => (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>&ltHello name={client.name} surname={client.surname} /&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>))}</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>);</code><br>
-													<code>}</code><br>
-													<code>export default App;</code><br>
-												</li>
-												<li><b>useEffect</b> from <b>function App()</b> component:
-													<br>
-													<code>useEffect(() => {</code><br>&nbsp&nbsp&nbsp&nbsp
-														<code>const getDataForSource = async () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>await fetch("https://...")</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>.then((response) => response.json())</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>.then((data) => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>const countires = data.map((country) => ({</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																		<code>name: country.country,</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																		<code>value: country.value,</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>}));</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																	<code>setCountires(countries);</code>&nbsp//modifier from useState<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-																<code>});</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<code>};</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-														<code>getDataForSource();</code><br>
-													<code>}, <span style="color:#20f157;">[]</span>);</code><br>
-													- runs a piece of code based on a given condition,<br>
-													- code within useEffect runs only once when component loads and not again after if no condition - when <span style="color:#20f157;">[]</span> is empty,<br>
-													- code within useEffect runs only once when component loads and when condition <span style="color:#20f157;">[countires]</span> given,<br>
-													- when condition <span style="color:#20f157;">[countires]</span> given, code in useEffect runs when variable <span style="color:#20f157;">countires</span> loads or changes.
-												</li>
-											</ul>
-
-
+										<h5>React Hooks:</h5>
+										<ul>
+											<li><b>useState</b> - asigning a state to a variable with modifier assigned to it:
+												<br>
+												<code>const [<span style="color:#ff4444;">state</span>, <span style="color:#00b8ff;">setState</span>] = useState(<span style="color:#ff4444;">initialState</span>);</code><br>
+												- useState returns a varaible storing local state and a function to update that variable,<br>
+												- during first rendering, a value of <span style="color:#ff4444;">state</span> variable is as the same as an initially passed value of <span style="color:#ff4444;">initialState</span> variable,<br>
+												- function <span style="color:#00b8ff;">setState</span> is used for updating the local state id est the value of <span style="color:#ff4444;">state</span> variable,<br>
+												- during next render processes, the first value in useState is alwyas the most recent state set by <span style="color:#00b8ff;">setState</span> function.<br>
+												- the example code:<br>
+												<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>const[count, setCount] = useState(0)</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>const increment = () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>setCount(count + 1);</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>};</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&ltbutton onClick="{increment}"&gtAdd&lt/button&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>&lthi&gt{count}&lt/h1&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>);</code><br>
+												<code>}</code><br>
+												<code>export default App;</code><br>
+												- when getting data from an external API we can save it in a state,<br>
+												<code>function App() {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>const[clients, setClients] = useState([</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>{name:'Artur', surname:'Skrzeta'},</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>{name:'Jan', surname:'Kowalski'},</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>{name:'Jonh', surname:'Smith'}</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>]);</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>return (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&ltdiv className="app"&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>{users.map(user => (</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>&ltHello name={client.name} surname={client.surname} /&gt</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>))}</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>&lt/div&gt</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>);</code><br>
+												<code>}</code><br>
+												<code>export default App;</code><br>
+											</li>
+											<li><b>useEffect</b> from <b>function App()</b> component:
+												<br>
+												<code>useEffect(() => {</code><br>&nbsp&nbsp&nbsp&nbsp
+													<code>const getDataForSource = async () => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>await fetch("https://...")</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>.then((response) => response.json())</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>.then((data) => {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>const countires = data.map((country) => ({</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>name: country.country,</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																	<code>value: country.value,</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>}));</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+																<code>setCountires(countries);</code>&nbsp//modifier from useState<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<code>});</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+														<code>};</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>getDataForSource();</code><br>
+												<code>}, <span style="color:#20f157;">[]</span>);</code><br>
+												- runs a piece of code based on a given condition,<br>
+												- code within useEffect runs only once when component loads and not again after if no condition - when <span style="color:#20f157;">[]</span> is empty,<br>
+												- code within useEffect runs only once when component loads and when condition <span style="color:#20f157;">[countires]</span> given,<br>
+												- when condition <span style="color:#20f157;">[countires]</span> given, code in useEffect runs when variable <span style="color:#20f157;">countires</span> loads or changes.
+											</li>
+										</ul>
 									</header>
 								</div>
 							</section>
