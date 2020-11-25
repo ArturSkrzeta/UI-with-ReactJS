@@ -451,7 +451,11 @@
 								<div class="container">
 									<h3>Demo</h3>
 
-									<p>Tis section presents app's demo:</p>
+									<h5>Json-server:</h5>
+									<ul>
+										<li></li>
+										<li></li>
+									</ul>
 
 								</div>
 							</section>
@@ -474,21 +478,56 @@
 										 <br>&nbsp&nbsp&nbsp
 										 <code>npx --version</code>
 									  </li>
+										<li>Creating package.json in current directory:
+											<br>&nbsp&nbsp&nbsp
+ 									   	<code>npm init -y</code><br>&nbsp&nbsp&nbsp&nbsp
+											add to package.json:<br>&nbsp&nbsp&nbsp
+											<code>"scripts": {</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+												<code>"server": "json-server --watch db.json --port 5000 --middleware </code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+													<code>./range.js",</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+												<code>"client": "npm start --prefix client",</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+												<code>"dev": "concurrently \"npm run server\" \"npm run client\""</code><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+											<code>},</code>
+										</li>
+										<li>Json-server installation:
+											<br>&nbsp&nbsp&nbsp
+											<code>npm i json-server</code>
+										</li>
+										<li>Being able to run json-server and react server in one terminal at once:
+											<br>&nbsp&nbsp&nbsp
+											<code>npm i concurrently</code>
+										</li>
 									  <li>Creating project in project directory:
 									   <br>&nbsp&nbsp&nbsp
-									   <code>npx create-react-app project-name</code>
+									   <code>npx create-react-app client</code>
 										 <br>&nbsp&nbsp&nbsp
-										 <code>cd project-name</code>
-									  </li>
-									  <li>Running omn localhost:3000:
-									   <br>&nbsp&nbsp&nbsp
-									   <code>npm start</code>
-									  </li>
-										<li>Bootstrap installation:
+										 <code>cd client</code>
+										 <br>&nbsp&nbsp&nbsp&nbsp&nbsp
+										 adding proxy of
 										 <br>&nbsp&nbsp&nbsp
-										 <code>npm i bootstrap@4.1.1</code><br>&nbsp&nbsp&nbsp
-										 <code>index.js -> import 'bootstrap/dist/css/boostrap.css';</code>
+										 <code>client > package.json > "proxy": "http://localhost:5000"</code>
+									  </li>
+										<li>react-admin inatllation in client directory:
+											<br>&nbsp&nbsp&nbsp
+											<code>npm i react-admin</code>
 										</li>
+										<li>ra-data-simple-rest inatllation in client directory:
+											<br>&nbsp&nbsp&nbsp
+											<code>npm i ra-data-simple-rest</code>
+										</li>
+										<li>Material-UI inatllation in client directory:
+											<br>&nbsp&nbsp&nbsp
+											<code>npm install @material-iu/core</code>
+										</li>
+										<li>Bootstrap installation:
+											<br>&nbsp&nbsp&nbsp
+											<code>npm i bootstrap@4.1.1</code><br>&nbsp&nbsp&nbsp
+											<code>index.js -> import 'bootstrap/dist/css/boostrap.css';</code>
+										</li>
+									  <li>Running react on localhost:3000 and json-server on localhost:5000:
+									   <br>&nbsp&nbsp&nbsp
+									   <code>npm run dev</code>
+									  </li>
 									</ol>
 								</div>
 							</section>
